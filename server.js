@@ -2,6 +2,7 @@ const { default: mongoose } = require("mongoose");
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const router = require("./router");
 
 app.use(cors());
 app.use(express.json());
@@ -21,3 +22,5 @@ connect();
 const server = app.listen(3001, "127.0.0.1", () => {
   console.log(`Node server is listning to ${server.address().port}`);
 });
+
+app.use("/api", router);
