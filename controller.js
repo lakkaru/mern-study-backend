@@ -18,7 +18,8 @@ const addUser = (req, res, next) => {
     id: req.body.id,
     name: req.body.name,
   });
-  User.save()
+  user
+    .save()
     .then((responce) => {
       res.json({ responce });
     })
